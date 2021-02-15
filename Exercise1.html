@@ -1,0 +1,57 @@
+<!-- Write a Javascript program wherein you add rows
+     to an existing table in HTML every time you click a button.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        table,
+        td {
+            border: 1px solid rgb(250, 233, 0);
+            padding: 2px;
+            width: 100%;
+            text-align: center;
+            font-family: "Lucida Console", "Courier New", monospace;
+            color: white;     
+        }
+    </style>
+    </head>
+
+    <body>
+        <table id="row" style="background-color: black;">
+            <tr style="background-color: white;">
+                <td style="color:black;">CLICK BUTTON TO ADD ROW</td>
+
+            </tr>
+
+        </table>
+        <br>
+
+        <button type="button" onclick="addrow()">Click this</button>
+
+
+
+        <script type="text/javascript">
+
+            function addrow() {
+                var table = document.getElementById("row");
+                var row = table.insertRow(0);
+                var cell = row.insertCell(0);
+                cell.innerHTML = "ROW ADDED!";
+            }
+
+
+
+
+        </script>
+    </body>
+
+</html>
