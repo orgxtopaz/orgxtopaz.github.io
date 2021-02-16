@@ -9,41 +9,59 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+
     <style>
         body{
             color: black;
             background-color: brown;
         }
+        button{
+            background-color: yellow;
+        }
 
     </style>
 
-<div id="here">
+    <div id="here">
 
 
-</div>
+    </div>
 
 
-    
+
 </body>
 
 <script type="text/javascript">
- //var firstinput=String(prompt("Input 3 parameters:"));
- //alert(firstinput);
- var parameters = document.createElement(firstinput);
- parameters.innerHTML = "Do Something";
+    element = String(prompt("Input Element ex. button")); //INPUT FIELD FOR ELEMENT
 
-document.body=(parameters);
+    text = String(prompt("Input Text inside element ex.Yourname"));//INPUT FIELD FOR TEXT
+
+    id = String(prompt("Input ID for the element ex.myID"));// INPUT FIELD FOR ID
+
+    //var GETINPUT =id.innerHTML = id;//GETTING VALUE IN PROMPT
+
+    //alert(GETINPUT);
+    var DisplayElement = document.createElement(element);//CREATING THE ELEMENT
+
+    DisplayElement.innerHTML = text;//ADDING TEXT INSIDE THE BUTTON (ELEMENT)
+
+    DisplayElement.setAttribute('id', (id)); //ADDING ID INSIDE THE BUTTON (ELEMENT)
+
+    DisplayElement.setAttribute('onclick', "window.location.href='Exercise3.html';"); // WHEN CLICK REDIRECT TO DIFFERENT SITE OR RELOAD IT SELF
+
+    document.body.appendChild(DisplayElement);//DISPLAYING ALL
 
 
 
- 
 
 </script>
+
 </html>
