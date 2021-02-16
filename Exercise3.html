@@ -14,7 +14,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Allerta Stencil' rel='stylesheet'>
+    <!-- add icon link -->
+    <link rel="icon" href="https://www.passerellesnumeriques.org/wp-content/uploads/2016/03/pn-logo.png" type="image/x-icon">
+    <title>Zigm</title>
 </head>
 
 <body>
@@ -22,11 +25,101 @@
     <style>
         body{
             color: black;
-            background-color: brown;
+            background-image: url("https://i.imgur.com/OqH4GUk.jpg");
+            text-align: center;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+           
         }
-        button{
-            background-color: yellow;
+      
+        #aiai{
+            top: 10%;
+            position: absolute;
+            left: 48%;
+            font-family: 'Allerta Stencil';
+            font-size: 22px;
+
         }
+        #p{
+            top: 15%;
+
+            position: absolute;
+            left: 43%;
+            font-family: 'Allerta Stencil';
+            font-size: 22px;
+        }
+
+        #glow-on-hover {
+            
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: absolute;
+    z-index: 0;
+    border-radius: 10px;
+    margin-right: 50%;
+    left: 42%;
+    background-repeat: no-repeat;
+    background-size: auto;
+    font-family: 'Allerta Stencil';
+    font-size: 22px;
+    
+}
+
+
+#glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+#glow-on-hover:active {
+    color: #000
+}
+
+#glow-on-hover:active:after {
+    background: transparent;
+}
+
+#glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+#glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
 
     </style>
 
@@ -40,27 +133,54 @@
 </body>
 
 <script type="text/javascript">
-    element = String(prompt("Input Element ex. button")); //INPUT FIELD FOR ELEMENT
 
-    text = String(prompt("Input Text inside element ex.Yourname"));//INPUT FIELD FOR TEXT
 
-    id = String(prompt("Input ID for the element ex.myID"));// INPUT FIELD FOR ID
+    // USING FUNCTION CREATE ELEMENT WITH PARAMETERS!
+
+    function createElement(element, id, innerText) {
+        var newElement = document.createElement(element);
+        newElement.id = id;
+        newElement.innerText = innerText;
+        document.body.appendChild(newElement);
+    }
+    createElement("button", "glow-on-hover", "migz");
+    createElement("h1", "aiai", "AIAI");
+    createElement("p", "p", "Waiting for LOVE");
+
+
+
+
+
+
+
+
+
+
+
+
+    // USING PROMPT TO CREATE ELEMENT 
+
+    //element = String(prompt("Input Element ex. button,h1,p","Button")); //INPUT FIELD FOR ELEMENT
+
+    //text = String(prompt("Input Text inside element ex.Yourname","Clickthis"));
+
+   // id = String(prompt("Input ID for the element ex.myID","MyId"));// INPUT FIELD FOR ID
 
     //var GETINPUT =id.innerHTML = id;//GETTING VALUE IN PROMPT
 
     //alert(GETINPUT);
-    var DisplayElement = document.createElement(element);//CREATING THE ELEMENT
+    //var DisplayElement = document.createElement(element);//CREATING THE ELEMENT
 
-    DisplayElement.innerHTML = text;//ADDING TEXT INSIDE THE BUTTON (ELEMENT)
-
-    DisplayElement.setAttribute('id', (id)); //ADDING ID INSIDE THE BUTTON (ELEMENT)
-
-    DisplayElement.setAttribute('onclick', "window.location.href='Exercise3.html';"); // WHEN CLICK REDIRECT TO DIFFERENT SITE OR RELOAD IT SELF
-
-    document.body.appendChild(DisplayElement);//DISPLAYING ALL
+    //DisplayElement.innerHTML = text;//ADDING TEXT INSIDE THE BUTTON (ELEMENT)
 
 
+   // DisplayElement.setAttribute('id', (id)); //ADDING ID INSIDE THE BUTTON (ELEMENT)
 
+   // DisplayElement.setAttribute('class', ("glow-on-hover")); //SET CLASS INSIDE THE BUTTON FOR DESIGN (ELEMENT)
+
+    //DisplayElement.setAttribute('onclick', "window.location.href='Exercise3.html';"); // WHEN CLICK REDIRECT TO DIFFERENT SITE OR RELOAD IT SELF
+
+   // document.body.appendChild(DisplayElement);//DISPLAYING ALL
 
 </script>
 

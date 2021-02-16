@@ -1,0 +1,165 @@
+<!-- Write a Javascript program wherein you have button1 and button2.
+     Button1 would have text inside displayed as “0” (zero) and button2 
+     would have text inside displayed as “Neutral”. Whenever you click on button1,
+      the text displayed inside button1 is then incremented by 1, and button2 will display
+       “Fizz” if the number in button1 is divisible by 3, “Buzz” if the number in button1 is
+        divisible by 5, and “FizzBuzz” if the number in button1 is divisible by both 3 and 5.
+        Extra Points: Set the color for Fizz as red, Buzz as blue, and Fizzbuzz as the color 
+        represented when you mix red and blue. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+<link href='https://fonts.googleapis.com/css?family=Allerta Stencil' rel='stylesheet'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zigm</title>
+    <!-- add icon link -->
+    <link rel="icon" href="https://www.passerellesnumeriques.org/wp-content/uploads/2016/03/pn-logo.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <style>
+
+        html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    background-image: url("https://i.imgur.com/OqH4GUk.jpg");
+    font-family: 'Allerta Stencil';
+    font-size: 22px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+#displaytext{
+    margin-top: 11%;
+    margin-right: 0%;
+    position: absolute;
+    
+}
+#img{
+    position: absolute;
+    top:0;
+    box-shadow: 10px 10px 5px rgb(0, 0, 0);
+    -webkit-border-radius:25px;
+    border-radius:25px;
+
+}
+
+    
+    </style>
+
+    <img src="" id="img">
+    <button onclick="button1()" id="button1" class="glow-on-hover">0</button>
+    <br>
+    <button id="displaytext" class="btn btn-primary btn-lg">Neutral</button>
+
+
+
+
+    <script type="text/javascript">
+        var valueinbutton = 0;
+        function button1() {
+            var button1 = document.getElementById('button1').innerText = value = ++valueinbutton;
+
+            if (valueinbutton % 3 == 0 && valueinbutton % 5 == 0) {
+                document.getElementById('displaytext').innerHTML = "<span style='color: blueviolet;'>FizzBuzz</span>"
+                document.getElementById("img").src = "https://media4.giphy.com/media/qIXLto457cIww/giphy.gif";
+             
+            }
+            else if (valueinbutton % 3 == 0) {
+                var fizz = document.getElementById('displaytext').innerHTML = "<span style='color: red;'>Fizz</span>"
+                document.getElementById("img").src = "https://thumbs.gfycat.com/ColdAgedKookaburra-max-1mb.gif";
+
+
+
+            }
+            else if (valueinbutton % 5 == 0) {
+                document.getElementById('displaytext').innerHTML = "<span style='color: blue;'>Buzz</span>"
+                document.getElementById("img").src = "https://thumbs.gfycat.com/AdvancedHarshHogget-small.gif";
+            }
+            else {
+                document.getElementById('displaytext').innerHTML = "Neutral";
+                document.getElementById("img").src = "https://thumbs.gfycat.com/ShoddyDefinitiveBlackrhino-size_restricted.gif";
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>
